@@ -1719,6 +1719,14 @@ app.get('/health', (req, res) => {
 
 // ==================== 404 & ERROR HANDLING ====================
 
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Aurora Weather API is running 🚀",
+    status: "OK",
+  });
+});
+
 app.use((req, res) => {
   res.status(404).json({
     success: false,
